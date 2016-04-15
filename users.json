@@ -1,0 +1,58 @@
+[
+ {
+  "username": "schen384",
+  "password": "123456"
+ },
+ {
+  "username": "yyao71",
+  "password": "123456"
+ },
+ {
+  "username": "schen381",
+  "password": "123456"
+ },
+ {
+  "username": "Sicong",
+  "password": "hehehehe",
+  "email": "schen.gatech@gmail.com"
+ },
+ {
+  "username": "new_user1",
+  "password": "asdf",
+  "email": "scott_493@gatech.edu"
+ },
+ {
+  "username": "asdf",
+  "password": "adf",
+  "email": "adsf"
+ },
+ {
+  "username": "test1",
+  "password": "test1",
+  "email": "test"
+ },
+ {
+  "username": "test_2",
+  "password": "test_2",
+  "email": "test_2",
+  "profile": {
+   "gender": "man",
+   "age": "xixi",
+   "height": "asdf",
+   "weight": "asdf"
+  }
+ },
+ {
+  "username": "test_3",
+  "password": "123456",
+  "email": "asdf",
+  "profile": {
+   "gender": "female",
+   "age": "21",
+   "ft": "5",
+   "inch": "10",
+   "weight": "150",
+   "exercise_level": "heavy"
+  }
+ }
+]

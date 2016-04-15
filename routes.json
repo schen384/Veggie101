@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/",
+    "title": "Home"
+  },
+  {
+    "path": "/view-meal",
+    "title": "Meals"
+  },
+  {
+  	"path": "/meal*",
+  	"title": "gt-webdev events"
+  },
+  {
+  	"path": "/about",
+  	"title": "About gt-webdev"
+  },
+  {
+    "path": "/register",
+    "title": "Register"
+  },
+  {
+    "path": "/login",
+    "title": "Login"
+  },
+  {
+    "path": "/profile*",
+    "title": "Profile"
+  }
+]

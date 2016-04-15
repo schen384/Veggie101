@@ -1,0 +1,215 @@
+import express from 'express'
+import React from 'react'
+import unirest from 'unirest'
+import { renderToString } from 'react-dom/server'
+import { match, RouterContext } from 'react-router'
+import router from './modules/routes'
+import routes from './routes.json'
+import path from 'path'
+import compression from 'compression'
+import bodyParser from 'body-parser'
+import fs from 'fs'
+import USERS from './users.json'
+import resultBody from './resultBody.json'
+
+var NutritionixClient = require('nutritionix');
+var nutritionix = new NutritionixClient({
+	appId: '0a93c2f5',
+	appKey: '4659bb399609d5d3db4713b22d75b3b2'
+});
+
+
+var app = express()
+
+app.use(compression())
+
+var USERS_FILE = path.join(__dirname, 'users.json');
+var MEALS_FILE = path.join(__dirname, 'meals.json');
+
+//static files
+app.use(express.static(path.join(__dirname,'public')))
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Additional middleware which will set headers that we need on each request.
+app.use(function(req, res, next) {
+    // Set permissive CORS header - this allows this server to be used only as
+    // an API server in conjunction with something like webpack-dev-server.
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    // Disable caching
+    res.setHeader('Cache-Control', 'no-cache');
+    next();
+});
+
+app.post('/auth/login', function(req,res) {
+	const usr = req.body.username
+	const pwd = req.body.password
+	var valid = false
+	USERS.forEach(user => {
+		if(user.username == usr && user.password == pwd) valid = true
+	})
+	if(valid) {
+		res.send({status:false})
+	} else {
+		res.send({status:true})
+	}
+});
+
+app.post('/auth/register', function(req,res) {
+	const usr = req.body.username
+	const pwd = req.body.password
+	const email = req.body.email
+	fs.readFile(USERS_FILE, function(err, data) {
+	    if (err) {
+	      console.error(err);
+	      process.exit(1);
+	    }
+	    var users = JSON.parse(data);
+	    // NOTE: In a real implementation, we would likely rely on a database
+	    var newUser = {
+	      username:usr,
+	      password:pwd,
+	      email:email
+	    };
+	    users.push(newUser);
+	    fs.writeFile(USERS_FILE, JSON.stringify(users, null, 1), function(err) {
+	      if (err) {
+	        console.error(err);
+	        process.exit(1);
+	      }
+	      res.json(users);
+	    });
+  	});
+});
+
+app.post('/user/profile', function(req, res) {
+	const usr = req.body.username
+	fs.readFile(USERS_FILE, function(err, data) {
+	    if (err) {
+	      console.error(err);
+	      process.exit(1);
+	    }
+	    var users = JSON.parse(data);
+	    // NOTE: In a real implementation, we would likely rely on a database
+	    users.forEach(user => {
+			if(user.username == usr) {
+				user.profile = req.body.profile
+			}
+		})
+	    fs.writeFile(USERS_FILE, JSON.stringify(users, null, 1), function(err) {
+	      if (err) {
+	        console.error(err);
+	        process.exit(1);
+	      }
+	      console.log(USERS)
+	      res.json(users);
+	    });
+  	});
+})
+
+app.get('/api/profile/:username',function(req,res) {
+	const usr = req.params.username
+	fs.readFile(USERS_FILE, function(err, data) {
+	    if (err) {
+	      console.error(err);
+	      process.exit(1);
+	    }
+	    var users = JSON.parse(data);
+	    // NOTE: In a real implementation, we would likely rely on a database
+	    users.forEach(user => {
+			if(user.username == usr) {
+				res.json(user)
+			}
+		})
+  	});
+})
+
+app.get('/api/recipe', function(req, res) {
+	// var url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?'
+	// for (field in req.body) {
+	// 	url += field + '=' + encodeURIComponent(req.body[field]) + '&'
+	// }
+	// url = url.slice(0, -1)
+	res.json(resultBody.result)
+	// unirest.get(url)
+	// .header("X-Mashape-Key", "mBmK1guETymshcqWZUhL9BF9bsw6p1oGGbSjsnKpivHrGN03fF")
+	// .end(function (result) {
+	//   console.log(result.status, result.headers, result.body);
+	// });
+});
+
+app.get('/api/search/:query', function(req,res) {
+	nutritionix.search({
+		q:req.params.query,
+		limit:20,
+		offset:0,
+		search_nutrient: 'calories'
+	}).then(function(items) {
+		if(items.results) {
+			res.send({status:200,results:items.results});	
+		} else {
+			res.send({status:404})
+		}		
+	}, function(err) {
+		console.log(err);
+	}).catch(function() {});
+})
+
+app.get('/api/meal/:foodId', function(req,res) {
+	nutritionix.item({
+	    id: req.params.foodId
+	}).then(function(item) {
+		// console.log(item);
+		res.send(item);
+	},function(err) {
+		console.log('err');
+	}).catch(function(err) {
+		console.log('catch');
+	});
+});
+
+// send all requests to index.html so browserHistory in React Router works
+routes.forEach(route => {
+	app.get(route.path, (req,res) => {
+		res.sendFile(path.join(__dirname, 'public', 'index.html'))
+		// match the routes to the url
+		// match({routes:router, location:req.url}, (err, redirect,props)  => {
+		// 	// in here we can make some decisions all at once
+		//     if (err) {
+		//       // there was an error somewhere during route matching
+		//       res.status(500).send(err.message)
+		//     } else if (redirect) {
+		//       // we haven't talked about `onEnter` hooks on routes, but before a
+		//       // route is entered, it can redirect. Here we handle on the server.
+		//       res.redirect(redirect.pathname + redirect.search)
+		//     } else if (props) {
+		//       // if we got props then we matched a route and can render
+		//       const appHtml = renderToString(<RouterContext {...props}/>)
+		//       res.send(renderPage(appHtml))
+		//     } else {
+		//       // no errors, no redirect, we just didn't match anything
+		//       res.status(404).send('Not Found')
+		//     }
+		// })
+	})
+})
+
+function renderPage(appHtml) {
+	return `
+		<!doctype html public="storage">
+		<html>
+		<meta charset=utf-8/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/style/style.css">
+		<title>Veggie</title>
+		<div id=root>${appHtml}</div>
+    	<script src="/bundle.js"></script>
+    	`
+}
+
+
+var PORT = process.env.PORT || 8080
+app.listen(PORT, function() {
+  console.log('Production Express server running at localhost:' + PORT)
+})

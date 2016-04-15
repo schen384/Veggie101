@@ -1,0 +1,350 @@
+.navbar.navbar-inverse {
+	margin-bottom: 0!important;
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+.home-top {
+	/*width: 1500px;
+	height: 1000px;*/
+	/*position: absolute;*/
+	background:url('/img/basket.jpeg') top center;	
+	background-size: cover;
+	/*opacity: 0.9;*/
+	z-index: -1;
+	overflow: auto;
+	padding-top: -10px;
+	min-height: 80vh;
+}
+
+.login {
+	background:url('/img/home-screen.jpg') top center;	
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.register {
+	background:url('/img/basket.jpeg') top center;	
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.profile {
+	background:url('/img/home-screen.jpg') top center;	
+	background-size: cover;
+	min-height: 100vh;	
+}
+
+.profile-btn {
+	margin-top: 30px!important;
+}
+
+.home {
+	min-height: 60vh;
+}
+
+.home-title{
+	/*text-shadow:-2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;*/
+	padding-top: 15%;
+	width: 50%;
+    margin: 0 auto;
+    text-align:center;
+    color:#fff;
+	font-size:45px;
+	font-weight:bold;
+	min-width: 600px;
+	max-width:660px;
+	/*text-shadow:0 0 20px #000, 0 0 15px #000;*/
+	@media (max-width:$screen-xs-max){
+		font-size:40px;
+	}
+}
+
+.home-options {	
+	/*width: 80%;*/
+	/*margin: 0 auto;*/
+	padding-top: 10%;
+	padding-bottom: 10%;
+}
+
+.home-button {
+	width: 30%;
+	min-width: 250px;
+	float: left;
+	margin-right: 10%;
+	margin-left: 10%;
+	color: black;
+	background-color: rgba(30, 8, 0, 0.52);
+	font-size: 20px;
+	font-weight: 300;
+	color: white
+}
+
+.home-button:hover,.home-button:active,.home-button:focus,.home-button:visited {
+	background-color: rgba(172, 48, 0, 0.41);
+	color: white;
+}
+
+.home-bot {
+	/*padding-top: 60vh;*/
+	background-color: white;
+}
+
+.tutorial-title {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5%;
+	font-size:40px;
+	font-weight:200;
+}
+
+.filter {
+	background-color:rgba(186, 219, 180, 0.28);
+	min-height: 100vh;
+	padding-left: 20px;
+}
+
+.filter-title {
+	font-family: georgia;
+	font-size: 30px;
+	font-weight: 300;
+	padding-top: 50px;
+	margin-bottom: 22px;
+}
+
+.filter-type {
+	font-family: georgia;
+	font-size: 22px;
+	font-weight: 300;
+	padding-top: 20px;
+	border-top: 1px solid lightgrey;
+}
+
+.checkbox label {
+	font-family: georgia;
+	font-size: 20px;
+}
+
+input[type=checkbox], input[type=radio] {
+	margin-top: 8px;
+}
+
+.search-input {
+	float: left;
+	width: 50%;
+	margin-top: 40px;
+	height: 45px;
+	font-size: 20px;
+	/*float: left;*/
+}
+
+.search-btn {
+	margin-top: 40px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	height: 45px;
+	font-size: 20px;
+	font-family: cursive;
+	font-weight: bold;
+	width: 120px;
+}
+
+.meal {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid lightgrey;
+	clear: both;
+}
+
+.meal-pic img {
+	max-width: 100%;
+	max-height: 100%;
+	display:block;
+    margin:auto;
+}
+
+.meal-name {
+	font-family:georgia;
+	color: darkgreen;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.nutrient-name {
+	font-family: georgia;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.nutrient-value {
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: sans-serif;
+}
+
+.nutrient-serving {
+	font-size: 17px;
+	font-family: georgia;
+	font-weight: 300;
+}
+
+.detail-page {
+	margin-top: 50px;
+}
+
+.detail-pic img{
+	max-width: 100%;
+	max-height: 100%;
+	display:block;
+    margin:auto;
+}
+
+.detail-pic-name {
+	width: 50%;
+	padding-top: 30px;
+    margin: 0 auto;
+    text-align:center;
+	font-size:20px;
+	font-weight:bold;
+	max-width:750px;
+	color: darkgreen;
+	font-family: georgia;
+}
+
+.detail-row {
+	margin-top: 20px;
+}
+
+.detail-name {
+	width: 50%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    text-align:center;
+	font-size:35px;
+	font-weight:bold;
+	max-width:750px;
+	color: darkgreen;
+	font-family: georgia;
+}
+
+.detail-label {
+	font-size: 18px;
+	font-weight: bold;	
+}
+
+.detail-text {
+	font-size: 18px;
+	/*font-weight: bold;	*/
+	font-family: georgia;
+}
+
+.detail-tables {
+	margin-top: 40px;
+}
+
+#detail-back {
+	float: right;
+}
+.detail-button {
+	margin-top: 20px;
+}
+
+#detail-pic-button {
+	width: 50%;
+	min-width: 150px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 30px;
+
+}
+
+.title {
+	padding-top: 150px;
+	width: 50%;
+    margin: 0 auto;
+    text-align:center;
+	font-size:55px;
+	font-weight:bold;
+	max-width:750px;
+	color: white;
+	font-family: -webkit-body;
+
+}
+
+.label-text {
+	margin-top: 10px;
+	font-weight: bold;
+	font-family: fantasy;
+	font-size: 20px;
+	color: white;
+}
+
+.login-btn {
+	margin-top: 10px;
+	float: right;
+	width: 100px;
+	font-family: fantasy;
+	height: 40px;
+	font-weight: bold;
+}
+
+.profile-title {
+	/*padding-top: 45px;*/
+	margin-bottom: 50px;
+}
+
+.profile-text {
+	text-align: right;
+	font-size: 25px;
+	margin-right: 20px;
+}
+
+.profile-input {
+	width: 50%;
+	margin-left: 20px;
+}
+
+.height-input {
+	width: 100%;
+	margin-left: 5px;
+}
+
+.prefix {
+	float: left;
+}
+
+.suffix {
+	color: white;
+	font-size: 20px;
+	text-align: left;
+	margin-left: -10px;
+}
+
+.exl {
+	margin-top: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
