@@ -11,7 +11,7 @@ export default React.createClass({
       ft:event.target.elements[2].value,
       inch:event.target.elements[3].value,
       weight:event.target.elements[4].value,
-      exercise_level:event.target.elements[5].value,
+      diet_type:event.target.elements[5].value,
     }
     
 
@@ -23,14 +23,13 @@ export default React.createClass({
       dataType:'JSON',
       success: function(data) {
           console.log(data)
-          // const path = `/user/${username}`
-          // browserHistory.push(path)  
+          const path = `/user/${this.props.params.username}`
+          browserHistory.push(path)  
       }.bind(this),
       error: function(xhr, status, err) {
         console.log(err);
       }.bind(this)
     })
-    
   },
 
   getUserInformation() {
@@ -65,7 +64,7 @@ export default React.createClass({
             <Grid>
             <form onSubmit={this.handleClick}>
               <Row>
-                <Col xs={6} md={6}>
+                <Col xs={5} md={5}>
                   <div className='label-text profile-text'>Gender</div>
                 </Col>
                 <Col xs={6} md={6}>
@@ -76,7 +75,7 @@ export default React.createClass({
                 </Col>
               </Row>
               <Row>
-                <Col xs={6} md={6}>
+                <Col xs={5} md={5}>
                   <div className='label-text profile-text' >Age</div>
                 </Col>
                 <Col xs={2} md={2}>
@@ -84,7 +83,7 @@ export default React.createClass({
                 </Col>
               </Row>
               <Row>
-                <Col xs={6} md={6}>
+                <Col xs={5} md={5}>
                   <div className='label-text profile-text'>Height</div>
                 </Col>
                 <Col xs={6} md={6}>
@@ -103,7 +102,7 @@ export default React.createClass({
                 </Col>
               </Row>
               <Row>
-                <Col xs={6} md={6}>
+                <Col xs={5} md={5}>
                   <div className='label-text profile-text'>Weight</div>
                 </Col>
                 <Col xs={6} md={6}>
@@ -116,21 +115,21 @@ export default React.createClass({
                 </Col>
               </Row>
               <Row className="exl">
-                <Col xs={6} md={6}>
-                  <div className='label-text profile-text'>Exercise Level (optional)</div>
+                <Col xs={5} md={5}>
+                  <div className='label-text profile-text'>Diet Type</div>
                 </Col>
                 <Col xs={6} md={6}>
-                  <Input type="select" className="veggie-input profile-input" name="exercise_level" id="exercise" placeholder="select">
-                    <option value="little">Little to no exercise</option>
-                    <option value="light">Light exercise (1-3 days per week)</option>
-                    <option value="moderate">Moderate exercise (3-5 days per week)</option>
-                    <option value="heavy">Heavy exercise (6-7 days per week)</option>
-                    <option value="very-heavy">Very heavy exercise (twice per day, extra heavy workouts)</option>
+                  <Input type="select" className="veggie-input profile-input" name="diet_type" id="diet_type" placeholder="select">
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="ovo vegetarian">ovo Vegetarian</option>
+                    <option value="lacto vegetarian">lacto vegetarian</option>
+                    <option value="pescetarian">pescetarian</option>
                   </Input>
                 </Col>
               </Row>
               <Row>
-                <Col xs={7} md={7}>
+                <Col xs={6} md={6}>
                 </Col>
                 <Col xs={3} md={3}>
                   <Button className="login-btn profile-btn" type='submit' bsSize="large" >Go</Button>

@@ -10,6 +10,7 @@ var NavDropdown = require("react-bootstrap/lib/NavDropdown");
 
 class Menu extends React.Component {
   render() {
+
     return (
       <Navbar inverse>
         <Navbar.Header>

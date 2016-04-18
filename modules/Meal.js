@@ -5,29 +5,58 @@ import {Link, browserHistory} from 'react-router'
 
 export default React.createClass({
 
+	loadRecipeFromServer() {
+		$.ajax({
+	      url: '/api/recipe/'+this.props.item.id,
+	      dataType:'json',
+	      cache:false,
+	      success: function(data) {
+	        var tags = ["vegetarian","vegan","glutenFree","dairyFree","sustainable","veryHealthy"];
+	        var true_tags = [];
+	        for(var ind = 0;ind < tags.length;ind++) {
+	        	if(data[tags[ind]] == true) true_tags.push(tags[ind])
+	        }
+	        this.setState({recipe:data,tags:true_tags});
+	      }.bind(this),
+	      error: function(xhr, status, err) {
+	        console.error(this.props.url, status, err.toString());
+	      }.bind(this)
+	    })
+	},
+
+	componentDidMount() {
+	    this.loadRecipeFromServer()
+	},
+
+	getInitialState() {
+		return ({recipe:{},tags:[],user:this.props.user})
+	},
+
 	render() {
+		console.log(this.props.item.username)
+		const link = this.props.item.username == null ? '/recipe/'+this.props.item.id : '/recipe/'+this.props.item.id + '/' + this.props.item.username
+
+		const tag_rows = this.state.tags.map((tag,i)=> {
+			return (<Row className="meal-tags" key={i}>{tag}</Row>)
+		})
+
 		return (
 			  <div className="meal">
 			  	<Row>
-			  		<Col xs={4} md={2}>
-				  		<div className="meal-pic"><Image src={this.props.item.thumbnail} rounded /></div>
+			  		<Col xs={2} md={2}>
+				  		<div className="meal-pic"><Image src={this.state.recipe.image} rounded /></div>
 				  	</Col>
-				  	<Col xs={4} md={5}>
-					  	<div className="meal-name">{this.props.item.item_name}</div>
-					  	<div className="meal-brand">{this.props.item.brand_name}</div>
+				  	<Col xs={4} md={4}>
+				  		<Row>
+				  			<div className="meal-name">{this.state.recipe.title}</div>
+				  			<div className="meal-ready">ready in {this.state.recipe.readyInMinutes} min</div>
+					  	</Row>
 				  	</Col>
-				  	<Col xs={2} md={3}>
-
-					  	<div className="nutrient-name">{this.props.item.nutrient_name}</div>
-					  	<div className="nutrient-value">
-					  		{this.props.item.nutrient_value} {this.props.item.nutrient_uom} 
-					  	</div>
-					  	<div className="nutrient-serving">
-					  		{this.props.item.serving_qty} {this.props.item.serving_uom}  
-					  	</div>
+				  	<Col xs={4} md={4} className="meal-tag-col">
+				  		{tag_rows}
 				  	</Col>
 				  	<Col xs={2} md={2}>
-				  		<Link to={'/meal/'+this.props.item.resource_id}>
+				  		<Link to={link}>
 				  			<Button type="submit" className="detail-btn" >View Detail</Button>
 				  		</Link>
 				  	</Col>

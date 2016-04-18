@@ -1,0 +1,52 @@
+[
+    {
+     "name": "Calories",
+     "target_value": "2000",
+     "unit": "cal"
+    },
+    {
+     "name": "Fat",
+     "target_value": "65",
+     "unit": "g"
+    },
+    {
+     "name": "Saturated Fat",
+     "target_value": "16",
+     "unit": "g"
+    },
+    {
+     "name": "Carbohydrates",
+     "target_value": "300",
+     "unit": "g"
+    },
+    {
+     "name": "Sugar",
+     "target_value": "87",
+     "unit": "g"
+    },
+    {
+     "name": "Sodium",
+     "target_value": "2300",
+     "unit": "mg"
+    },
+    {
+     "name": "Protein",
+     "target_value": "50",
+     "unit": "g"
+    },
+    {
+     "name": "Fiber",
+     "target_value": "25",
+     "unit": "g"
+    },
+    {
+     "name": "Calcium",
+     "target_value": "1000",
+     "unit": "mg"
+    },
+    {
+     "name": "Vitamin C",
+     "target_value": "82.5",
+     "unit": "mg"
+    }
+   ]

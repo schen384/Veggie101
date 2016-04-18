@@ -4,16 +4,16 @@
     "title": "Home"
   },
   {
-    "path": "/view-meal",
+    "path": "/view-meal*",
     "title": "Meals"
   },
   {
-  	"path": "/meal*",
-  	"title": "gt-webdev events"
+  	"path": "/recipe*",
+  	"title": "Recipe"
   },
   {
   	"path": "/about",
-  	"title": "About gt-webdev"
+  	"title": "About"
   },
   {
     "path": "/register",
@@ -26,5 +26,9 @@
   {
     "path": "/profile*",
     "title": "Profile"
+  },
+  {
+    "path": "/user*",
+    "title": "User"
   }
 ]

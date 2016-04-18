@@ -1,7 +1,123 @@
 [
  {
   "username": "schen384",
-  "password": "123456"
+  "password": "123456",
+  "profile": {
+   "target_nutrients": [
+    {
+     "name": "Calories",
+     "target_value": "2000",
+     "unit": "cal"
+    },
+    {
+     "name": "Fat",
+     "target_value": "65",
+     "unit": "g"
+    },
+    {
+     "name": "Saturated Fat",
+     "target_value": "16",
+     "unit": "g"
+    },
+    {
+     "name": "Carbohydrates",
+     "target_value": "300",
+     "unit": "g"
+    },
+    {
+     "name": "Sugar",
+     "target_value": "87",
+     "unit": "g"
+    },
+    {
+     "name": "Sodium",
+     "target_value": "2300",
+     "unit": "mg"
+    },
+    {
+     "name": "Protein",
+     "target_value": "50",
+     "unit": "g"
+    },
+    {
+     "name": "Fiber",
+     "target_value": "25",
+     "unit": "g"
+    },
+    {
+     "name": "Calcium",
+     "target_value": "1000",
+     "unit": "mg"
+    },
+    {
+     "name": "Vitamin C",
+     "target_value": "82.5",
+     "unit": "mg"
+    }
+   ]
+  },
+  "history": [
+   {
+    "date": "4/17/2016",
+    "food": [
+     {
+      "name": "Smashed White Bean and Avocado Sandwich",
+      "field": "Smashed White Bean and Avocado Sandwich"
+     },
+     {
+      "name": "Kale and Quinoa Salad with Black Beans",
+      "field": "Kale and Quinoa Salad with Black Beans"
+     }
+    ],
+    "nutrients_intake": [
+     {
+      "name": "Calories",
+      "Smashed White Bean and Avocado Sandwich": "0.31620000000000004",
+      "Kale and Quinoa Salad with Black Beans": "0.18"
+     },
+     {
+      "name": "Fat",
+      "Smashed White Bean and Avocado Sandwich": "0.3786",
+      "Kale and Quinoa Salad with Black Beans": "0.12"
+     },
+     {
+      "name": "Protein",
+      "Smashed White Bean and Avocado Sandwich": "0.5272",
+      "Kale and Quinoa Salad with Black Beans": "0.37"
+     },
+     {
+      "name": "Carbs",
+      "Smashed White Bean and Avocado Sandwich": "0.27440000000000003",
+      "Kale and Quinoa Salad with Black Beans": "0.19"
+     },
+     {
+      "name": "Sugar",
+      "Smashed White Bean and Avocado Sandwich": "0.0817",
+      "Kale and Quinoa Salad with Black Beans": "0.03"
+     },
+     {
+      "name": "Sodium",
+      "Smashed White Bean and Avocado Sandwich": "0.19469999999999998",
+      "Kale and Quinoa Salad with Black Beans": "0.11"
+     },
+     {
+      "name": "Calcium",
+      "Smashed White Bean and Avocado Sandwich": "0.301",
+      "Kale and Quinoa Salad with Black Beans": "0.08"
+     },
+     {
+      "name": "Fiber",
+      "Smashed White Bean and Avocado Sandwich": "0.8924",
+      "Kale and Quinoa Salad with Black Beans": "0.79"
+     },
+     {
+      "name": "Vitamin C",
+      "Smashed White Bean and Avocado Sandwich": "0.2447",
+      "Kale and Quinoa Salad with Black Beans": "0.61"
+     }
+    ]
+   }
+  ]
  },
  {
   "username": "yyao71",
@@ -52,7 +168,373 @@
    "ft": "5",
    "inch": "10",
    "weight": "150",
-   "exercise_level": "heavy"
+   "diet_type": "ovo vegetarian",
+   "target_nutrients": [
+    {
+     "name": "Calories",
+     "target_value": "2000",
+     "unit": "cal"
+    },
+    {
+     "name": "Fat",
+     "target_value": "65",
+     "unit": "g"
+    },
+    {
+     "name": "Saturated Fat",
+     "target_value": "16",
+     "unit": "g"
+    },
+    {
+     "name": "Carbohydrates",
+     "target_value": "300",
+     "unit": "g"
+    },
+    {
+     "name": "Sugar",
+     "target_value": "87",
+     "unit": "g"
+    },
+    {
+     "name": "Sodium",
+     "target_value": "2300",
+     "unit": "mg"
+    },
+    {
+     "name": "Protein",
+     "target_value": "50",
+     "unit": "g"
+    },
+    {
+     "name": "Fiber",
+     "target_value": "25",
+     "unit": "g"
+    },
+    {
+     "name": "Calcium",
+     "target_value": "1000",
+     "unit": "mg"
+    }
+   ]
+  },
+  "history": [
+   {
+    "date": "4/16/2016",
+    "food": [
+     {
+      "name": "Steak",
+      "field": "Steak"
+     },
+     {
+      "name": "Fried Chicken",
+      "field": "Fried Chicken"
+     },
+     {
+      "name": "Pork",
+      "field": "Pork"
+     },
+     {
+      "name": "Salad",
+      "field": "Salad"
+     }
+    ],
+    "nutrients_intake": [
+     {
+      "name": "Calories",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.1,
+      "unit": "g"
+     },
+     {
+      "name": "Fat",
+      "Steak": 0.3,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.04,
+      "unit": "g"
+     },
+     {
+      "name": "Protein",
+      "Steak": 0.1,
+      "Fried Chicken": 0.2,
+      "Pork": 0.1,
+      "Salad": 0.2,
+      "unit": "g"
+     },
+     {
+      "name": "Carbs",
+      "Steak": 0.1,
+      "Fried Chicken": 0.3,
+      "Pork": 0.05,
+      "Salad": 0.3,
+      "unit": "g"
+     },
+     {
+      "name": "Sugar",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.2,
+      "unit": "g"
+     },
+     {
+      "name": "Sodium",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.07,
+      "unit": "g"
+     },
+     {
+      "name": "Calcium",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.07,
+      "unit": "g"
+     },
+     {
+      "name": "Vitamin A",
+      "Steak": 0.09,
+      "Fried Chicken": 0.2,
+      "Pork": 0.02,
+      "Salad": 0.3,
+      "unit": "g"
+     },
+     {
+      "name": "Vitamin C",
+      "Steak": 0.01,
+      "Fried Chicken": 0.03,
+      "Pork": 0.02,
+      "Salad": 0.3,
+      "unit": "g"
+     }
+    ]
+   },
+   {
+    "date": "4/15/2016",
+    "food": [
+     {
+      "name": "Steak",
+      "field": "Steak"
+     },
+     {
+      "name": "Fried Chicken",
+      "field": "Fried Chicken"
+     },
+     {
+      "name": "Pork",
+      "field": "Pork"
+     },
+     {
+      "name": "Salad",
+      "field": "Salad"
+     }
+    ],
+    "nutrients_intake": [
+     {
+      "name": "Calories",
+      "Steak": 0.31620000000000004,
+      "Fried Chicken": 0.1,
+      "Pork": 0.1,
+      "Salad": 0.2,
+      "unit": "g"
+     },
+     {
+      "name": "Fat",
+      "Steak": 0.4,
+      "Fried Chicken": 0.2,
+      "Pork": 0.1,
+      "Salad": 0.04,
+      "unit": "g"
+     },
+     {
+      "name": "Protein",
+      "Steak": 0.3,
+      "Fried Chicken": 0.1,
+      "Pork": 0.04,
+      "Salad": 0.1,
+      "unit": "g"
+     },
+     {
+      "name": "Carbs",
+      "Steak": 0.02,
+      "Fried Chicken": 0.2,
+      "Pork": 0.05,
+      "Salad": 0.3,
+      "unit": "g"
+     },
+     {
+      "name": "Sugar",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.4,
+      "Salad": 0.1,
+      "unit": "g"
+     },
+     {
+      "name": "Sodium",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.07,
+      "unit": "g"
+     },
+     {
+      "name": "Calcium",
+      "Steak": 0.1,
+      "Fried Chicken": 0.1,
+      "Pork": 0.2,
+      "Salad": 0.07,
+      "unit": "g"
+     },
+     {
+      "name": "Vitamin A",
+      "Steak": 0.09,
+      "Fried Chicken": 0.2,
+      "Pork": 0.02,
+      "Salad": 0.3,
+      "unit": "g"
+     },
+     {
+      "name": "Vitamin C",
+      "Steak": 0.01,
+      "Fried Chicken": 0.03,
+      "Pork": 0.02,
+      "Salad": 0.3,
+      "unit": "g"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "username": "final_test",
+  "password": "final_test",
+  "email": "schen384@gatech.edu",
+  "history": [
+   {
+    "date": "4/17/2016",
+    "food": [
+     {
+      "name": "Lentil & cauliflower curry",
+      "field": "Lentil & cauliflower curry"
+     },
+     {
+      "name": "Smashed White Bean and Avocado Sandwich",
+      "field": "Smashed White Bean and Avocado Sandwich"
+     }
+    ],
+    "nutrients_intake": [
+     {
+      "name": "Calories",
+      "Lentil & cauliflower curry": 0.18,
+      "Smashed White Bean and Avocado Sandwich": 0.32
+     },
+     {
+      "name": "Fat",
+      "Lentil & cauliflower curry": 0.12,
+      "Smashed White Bean and Avocado Sandwich": 0.38
+     },
+     {
+      "name": "Protein",
+      "Lentil & cauliflower curry": 0.43,
+      "Smashed White Bean and Avocado Sandwich": 0.53
+     },
+     {
+      "name": "Carbs",
+      "Lentil & cauliflower curry": 0.17,
+      "Smashed White Bean and Avocado Sandwich": 0
+     },
+     {
+      "name": "Sugar",
+      "Lentil & cauliflower curry": 0.05,
+      "Smashed White Bean and Avocado Sandwich": 0.08
+     },
+     {
+      "name": "Sodium",
+      "Lentil & cauliflower curry": 0.04,
+      "Smashed White Bean and Avocado Sandwich": 0.19
+     },
+     {
+      "name": "Calcium",
+      "Lentil & cauliflower curry": 0.12,
+      "Smashed White Bean and Avocado Sandwich": 0.3
+     },
+     {
+      "name": "Fiber",
+      "Lentil & cauliflower curry": 0.75,
+      "Smashed White Bean and Avocado Sandwich": 0.89
+     },
+     {
+      "name": "Vitamin C",
+      "Lentil & cauliflower curry": 0.37,
+      "Smashed White Bean and Avocado Sandwich": 0.24
+     }
+    ]
+   }
+  ],
+  "profile": {
+   "target_nutrients": [
+    {
+     "name": "Calories",
+     "target_value": "2000",
+     "unit": "cal"
+    },
+    {
+     "name": "Fat",
+     "target_value": "65",
+     "unit": "g"
+    },
+    {
+     "name": "Saturated Fat",
+     "target_value": "16",
+     "unit": "g"
+    },
+    {
+     "name": "Carbohydrates",
+     "target_value": "300",
+     "unit": "g"
+    },
+    {
+     "name": "Sugar",
+     "target_value": "87",
+     "unit": "g"
+    },
+    {
+     "name": "Sodium",
+     "target_value": "2300",
+     "unit": "mg"
+    },
+    {
+     "name": "Protein",
+     "target_value": "50",
+     "unit": "g"
+    },
+    {
+     "name": "Fiber",
+     "target_value": "25",
+     "unit": "g"
+    },
+    {
+     "name": "Calcium",
+     "target_value": "1000",
+     "unit": "mg"
+    },
+    {
+     "name": "Vitamin C",
+     "target_value": "82.5",
+     "unit": "mg"
+    }
+   ],
+   "gender": "male",
+   "age": "21",
+   "ft": "5",
+   "inch": "10",
+   "weight": "160",
+   "diet_type": "vegetarian"
   }
  }
 ]

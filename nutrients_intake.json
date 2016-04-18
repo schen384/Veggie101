@@ -1,0 +1,74 @@
+[
+	{
+		"name":"Calories",
+		"Steak":0.1,
+		"Fried Chicken":0.1,
+		"Pork":0.2,
+		"Salad":0.1,
+		"unit":"g"
+	},
+	{
+		"name":"Fat",
+		"Steak":0.3,
+		"Fried Chicken":0.1,
+		"Pork":0.2,
+		"Salad":0.04,
+		"unit":"g"
+	},
+	{
+		"name":"Protein",
+		"Steak":0.1,
+		"Fried Chicken":0.2,
+		"Pork":0.1,
+		"Salad":0.2,
+		"unit":"g"
+	},
+	{
+		"name":"Carbs",
+		"Steak":0.1,
+		"Fried Chicken":0.3,
+		"Pork":0.05,
+		"Salad":0.3,
+		"unit":"g"
+	},
+	{
+		"name":"Sugar",
+		"Steak":0.1,
+		"Fried Chicken":0.1,
+		"Pork":0.2,
+		"Salad":0.2,
+		"unit":"g"
+	},
+	{
+		"name":"Sodium",
+		"Steak":0.1,
+		"Fried Chicken":0.1,
+		"Pork":0.2,
+		"Salad":0.07,
+		"unit":"g"
+	},
+	{
+		"name":"Calcium",
+		"Steak":0.1,
+		"Fried Chicken":0.1,
+		"Pork":0.2,
+		"Salad":0.07,
+		"unit":"g"
+	},
+	{
+		"name":"Vitamin A",
+		"Steak":0.09,
+		"Fried Chicken":0.2,
+		"Pork":0.02,
+		"Salad":0.3,
+		"unit":"g"
+	},
+	{
+		"name":"Vitamin C",
+		"Steak":0.01,
+		"Fried Chicken":0.03,
+		"Pork":0.02,
+		"Salad":0.3,
+		"unit":"g"
+	}
+]

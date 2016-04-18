@@ -1,5 +1,6 @@
 import express from 'express'
 import React from 'react'
+import jQuery from 'jquery'
 import unirest from 'unirest'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
@@ -10,7 +11,11 @@ import compression from 'compression'
 import bodyParser from 'body-parser'
 import fs from 'fs'
 import USERS from './users.json'
+
+//dev purpose
+import standard_target from './standard_target.json'
 import resultBody from './resultBody.json'
+import singleRecipe from './singleRecipe.json'
 
 var NutritionixClient = require('nutritionix');
 var nutritionix = new NutritionixClient({
@@ -70,7 +75,9 @@ app.post('/auth/register', function(req,res) {
 	    var newUser = {
 	      username:usr,
 	      password:pwd,
-	      email:email
+	      email:email,
+	      history:[],
+	      profile:{}
 	    };
 	    users.push(newUser);
 	    fs.writeFile(USERS_FILE, JSON.stringify(users, null, 1), function(err) {
@@ -94,10 +101,86 @@ app.post('/user/profile', function(req, res) {
 	    // NOTE: In a real implementation, we would likely rely on a database
 	    users.forEach(user => {
 			if(user.username == usr) {
-				user.profile = req.body.profile
+				if(user.profile.target_nutrients == null) {
+					user.profile.target_nutrients = standard_target
+				}
+				for (var field in req.body.profile) {
+					user.profile[field] = req.body.profile[field]
+				}
 			}
 		})
 	    fs.writeFile(USERS_FILE, JSON.stringify(users, null, 1), function(err) {
+	      if (err) {
+	        console.error(err);
+	        process.exit(1);
+	      }
+	      console.log(USERS)
+	      res.json(users);
+	    });
+  	});
+})
+
+app.post('/api/addFood', function(req,res) {
+	var empty_nutrients = [{"name": "Calories"},{"name": "Fat"},{"name": "Protein"},{"name": "Carbs"},{"name": "Sugar"},{"name": "Sodium"},{"name": "Calcium"},{"name": "Fiber"},{"name": "Vitamin C"}]
+	const usr = req.body.username
+	fs.readFile(USERS_FILE, function(err, data) {
+	    if (err) {
+	      console.error(err);
+	      process.exit(1);
+	    }
+	    var users = JSON.parse(data);
+	    // NOTE: In a real implementation, we would likely rely on a database
+	    users.forEach(user => {
+			if(user.username == usr) {
+				var found = false
+				user.history.forEach(history => {
+					if(history.date == req.body.date) {
+						found = true
+						history.food.push({name:req.body.title,field:req.body.title})
+						history.nutrients_intake.map(nutrient => {
+							var match_nutrient = false
+							req.body.nutrients.map(added_nutrient => {
+								if(added_nutrient.title == nutrient.name) {
+									match_nutrient = true
+									if(nutrient[req.body.title]) {
+										nutrient[req.body.title] += parseFloat((added_nutrient.percentOfDailyNeeds/100).toFixed(2))
+									} else {
+										nutrient[req.body.title] = parseFloat((added_nutrient.percentOfDailyNeeds/100).toFixed(2))
+									}
+								}
+								if(added_nutrient.title == 'Carbohydrates' && nutrient.name == 'Carbs') {
+									if(nutrient[req.body.title]) {
+										nutrient[req.body.title] += parseFloat((added_nutrient.percentOfDailyNeeds/100).toFixed(2))
+									} else {
+										nutrient[req.body.title] = parseFloat((added_nutrient.percentOfDailyNeeds/100).toFixed(2))
+									}
+								}
+							})
+							if (!match_nutrient) nutrient[req.body.title] = 0
+						})
+					}
+				})
+				if (!found) {
+					empty_nutrients.map(n => {
+						req.body.nutrients.map(added_nutrient => {
+							if(added_nutrient.title == n.name) {
+								n[req.body.title] = parseFloat((added_nutrient.percentOfDailyNeeds/100).toFixed(2))
+							}
+							if(added_nutrient.title == 'Carbohydrates' && n.name == 'Carbs') {									
+									n[req.body.title] = parseFloat((added_nutrient.percentOfDailyNeeds/100).toFixed(2))
+								}
+						})
+					})
+					var new_history = {
+						date:req.body.date,
+						food:[{name:req.body.title,field:req.body.title}],
+						nutrients_intake: empty_nutrients
+					}
+					user.history.push(new_history)
+				}
+			}
+		})
+		fs.writeFile(USERS_FILE, JSON.stringify(users, null, 1), function(err) {
 	      if (err) {
 	        console.error(err);
 	        process.exit(1);
@@ -125,19 +208,40 @@ app.get('/api/profile/:username',function(req,res) {
   	});
 })
 
-app.get('/api/recipe', function(req, res) {
-	// var url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?'
-	// for (field in req.body) {
-	// 	url += field + '=' + encodeURIComponent(req.body[field]) + '&'
-	// }
-	// url = url.slice(0, -1)
-	res.json(resultBody.result)
-	// unirest.get(url)
-	// .header("X-Mashape-Key", "mBmK1guETymshcqWZUhL9BF9bsw6p1oGGbSjsnKpivHrGN03fF")
-	// .end(function (result) {
-	//   console.log(result.status, result.headers, result.body);
-	// });
+app.post('/api/recipes', function(req, res) {
+	var url = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?'
+	for (var field in req.body) {
+		if(req.body[field] != '') {
+			url += field + '=' + encodeURIComponent(req.body[field]) + '&'
+		}
+	}
+	url = url.slice(0, -1)
+	unirest.get(url)
+	.header("X-Mashape-Key", "mBmK1guETymshcqWZUhL9BF9bsw6p1oGGbSjsnKpivHrGN03fF")
+	.end(function (result) {
+	  console.log(result.status, result.headers, result.body);
+	  res.json(result.body)
+	});
 });
+
+app.get('/api/recipes', function(req, res) {
+	unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?diet=vegetarian&limitLicense=false&number=10&offset=0&query=any&type=main+course")
+	.header("X-Mashape-Key", "mBmK1guETymshcqWZUhL9BF9bsw6p1oGGbSjsnKpivHrGN03fF")
+	.end(function (result) {
+	  res.json(result.body)
+	});
+})
+
+app.get('/api/recipe/:recipe_id', function(req,res) {
+	var url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/"+ req.params.recipe_id + "/information?includeNutrition=true"
+	unirest.get(url)
+	.header("X-Mashape-Key", "mBmK1guETymshcqWZUhL9BF9bsw6p1oGGbSjsnKpivHrGN03fF")
+	.end(function (result) {
+	  console.log(result.status, result.headers, result.body);
+	  res.json(result.body)
+	});
+
+})
 
 app.get('/api/search/:query', function(req,res) {
 	nutritionix.search({
@@ -209,7 +313,7 @@ function renderPage(appHtml) {
 }
 
 
-var PORT = process.env.PORT || 8080
+var PORT = process.env.PORT || 8000
 app.listen(PORT, function() {
   console.log('Production Express server running at localhost:' + PORT)
 })

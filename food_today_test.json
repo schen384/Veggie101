@@ -1,0 +1,20 @@
+[
+
+	{
+		"name":"Steak",
+		"nutrients":[{"title":"Calories","amount":58.34,"unit":"cal","percentOfDailyNeeds":2.92},{"title":"Fat","amount":1.99,"unit":"g","percentOfDailyNeeds":3.07},{"title":"Saturated Fat","amount":0.27,"unit":"g","percentOfDailyNeeds":1.68},{"title":"Carbohydrates","amount":10.1,"unit":"g","percentOfDailyNeeds":3.37},{"title":"Sugar","amount":9.09,"unit":"g","percentOfDailyNeeds":10.1},{"title":"Cholesterol","amount":0.01,"unit":"mg","percentOfDailyNeeds":0.0},{"title":"Sodium","amount":1.31,"unit":"mg","percentOfDailyNeeds":0.06},{"title":"Protein","amount":0.68,"unit":"g","percentOfDailyNeeds":1.35},{"title":"Manganese","amount":0.08,"unit":"mg","percentOfDailyNeeds":3.77},{"title":"Copper","amount":0.05,"unit":"mg","percentOfDailyNeeds":2.6},{"title":"Magnesium","amount":8.85,"unit":"mg","percentOfDailyNeeds":2.21},{"title":"Phosphorus","amount":16.98,"unit":"mg","percentOfDailyNeeds":1.7},{"title":"Fiber","amount":0.35,"unit":"g","percentOfDailyNeeds":1.39}]
+	},
+	{
+		"name":"Fried Chicken",
+		"nutrients":[{"title":"Calories","amount":58.34,"unit":"cal","percentOfDailyNeeds":2.92},{"title":"Fat","amount":1.99,"unit":"g","percentOfDailyNeeds":3.07},{"title":"Saturated Fat","amount":0.27,"unit":"g","percentOfDailyNeeds":1.68},{"title":"Carbohydrates","amount":10.1,"unit":"g","percentOfDailyNeeds":3.37},{"title":"Sugar","amount":9.09,"unit":"g","percentOfDailyNeeds":10.1},{"title":"Cholesterol","amount":0.01,"unit":"mg","percentOfDailyNeeds":0.0},{"title":"Sodium","amount":1.31,"unit":"mg","percentOfDailyNeeds":0.06},{"title":"Protein","amount":0.68,"unit":"g","percentOfDailyNeeds":1.35},{"title":"Manganese","amount":0.08,"unit":"mg","percentOfDailyNeeds":3.77},{"title":"Copper","amount":0.05,"unit":"mg","percentOfDailyNeeds":2.6},{"title":"Magnesium","amount":8.85,"unit":"mg","percentOfDailyNeeds":2.21},{"title":"Phosphorus","amount":16.98,"unit":"mg","percentOfDailyNeeds":1.7},{"title":"Fiber","amount":0.35,"unit":"g","percentOfDailyNeeds":1.39}]
+	},
+	{
+		"name":"Pork",
+		"nutrients":[{"title":"Calories","amount":58.34,"unit":"cal","percentOfDailyNeeds":2.92},{"title":"Fat","amount":1.99,"unit":"g","percentOfDailyNeeds":3.07},{"title":"Saturated Fat","amount":0.27,"unit":"g","percentOfDailyNeeds":1.68},{"title":"Carbohydrates","amount":10.1,"unit":"g","percentOfDailyNeeds":3.37},{"title":"Sugar","amount":9.09,"unit":"g","percentOfDailyNeeds":10.1},{"title":"Cholesterol","amount":0.01,"unit":"mg","percentOfDailyNeeds":0.0},{"title":"Sodium","amount":1.31,"unit":"mg","percentOfDailyNeeds":0.06},{"title":"Protein","amount":0.68,"unit":"g","percentOfDailyNeeds":1.35},{"title":"Manganese","amount":0.08,"unit":"mg","percentOfDailyNeeds":3.77},{"title":"Copper","amount":0.05,"unit":"mg","percentOfDailyNeeds":2.6},{"title":"Magnesium","amount":8.85,"unit":"mg","percentOfDailyNeeds":2.21},{"title":"Phosphorus","amount":16.98,"unit":"mg","percentOfDailyNeeds":1.7},{"title":"Fiber","amount":0.35,"unit":"g","percentOfDailyNeeds":1.39}]
+	},
+	{
+		"name":"Salad",
+		"nutrients":[{"title":"Calories","amount":58.34,"unit":"cal","percentOfDailyNeeds":2.92},{"title":"Fat","amount":1.99,"unit":"g","percentOfDailyNeeds":3.07},{"title":"Saturated Fat","amount":0.27,"unit":"g","percentOfDailyNeeds":1.68},{"title":"Carbohydrates","amount":10.1,"unit":"g","percentOfDailyNeeds":3.37},{"title":"Sugar","amount":9.09,"unit":"g","percentOfDailyNeeds":10.1},{"title":"Cholesterol","amount":0.01,"unit":"mg","percentOfDailyNeeds":0.0},{"title":"Sodium","amount":1.31,"unit":"mg","percentOfDailyNeeds":0.06},{"title":"Protein","amount":0.68,"unit":"g","percentOfDailyNeeds":1.35},{"title":"Manganese","amount":0.08,"unit":"mg","percentOfDailyNeeds":3.77},{"title":"Copper","amount":0.05,"unit":"mg","percentOfDailyNeeds":2.6},{"title":"Magnesium","amount":8.85,"unit":"mg","percentOfDailyNeeds":2.21},{"title":"Phosphorus","amount":16.98,"unit":"mg","percentOfDailyNeeds":1.7},{"title":"Fiber","amount":0.35,"unit":"g","percentOfDailyNeeds":1.39}]
+	}
+]
+

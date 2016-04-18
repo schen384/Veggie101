@@ -7,7 +7,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div className={'page-' + (this.props.location.pathname.replace(/^\/+/,'').replace(/\//g,'-') || 'home')}>
+      <div className={'page-root'}>
         <Menu />
         {this.props.children}
       </div>
