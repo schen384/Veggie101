@@ -142,8 +142,8 @@ export default React.createClass({
               {types}
             </div>
           </Col>
-          <Col xs={8} md={8}>
-            <div className="meals"> 
+          <Col xs={8} md={8} className="meals">
+            <div > 
               
                 <Input type="text" className="search-input" placeholder="Have a food name in mind?"/>
                 <Button type="submit" className="search-btn">Find Recipes</Button>

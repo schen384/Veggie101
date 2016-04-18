@@ -102,12 +102,12 @@
 }
 
 .filter-left-col {
-	background-color: #EFEFEF;
+	/*background-color: #EFEFEF;*/
 	padding: 0;
 }
 
 .filter {
-	border-right: 1px solid lightgrey;
+	/*border-right: 1px solid lightgrey;*/
 	/*background-color:rgba(186, 219, 180, 0.28);*/
 	min-height: 100vh;
 	padding-left: 20px;
@@ -158,6 +158,11 @@ input[type=checkbox], input[type=radio] {
 	font-family: proxima-nova-bold;
 	font-weight: bold;
 	width: 150px;
+}
+
+.meals {
+	padding: 0;
+	background-color: white;
 }
 
 .meal {
@@ -446,6 +451,9 @@ svg {
     left: 40%;
 }
 
+.view-meal-page {
+	background-color: #F5F5F5;
+}
 
 
 
