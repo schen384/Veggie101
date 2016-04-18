@@ -33571,9 +33571,11 @@
 
 	        var recipes = data.results;
 	        if (recipes.length != 0) {
-	          recipes.forEach(function (recipe) {
-	            recipe.username = _this.state.username;
-	          });
+	          if (this.state.username != null) {
+	            recipes.forEach(function (recipe) {
+	              recipe.username = _this.state.username;
+	            });
+	          }
 	          this.setState({ recipes: recipes });
 	        } else {
 	          this.setState({ showAlert: true });
@@ -33595,9 +33597,11 @@
 
 	        var recipes = data.results;
 	        if (recipes.length != 0) {
-	          recipes.forEach(function (recipe) {
-	            recipe.username = _this2.state.username;
-	          });
+	          if (this.state.username != null) {
+	            recipes.forEach(function (recipe) {
+	              recipe.username = _this2.state.username;
+	            });
+	          }
 	          this.setState({ recipes: recipes });
 	        }
 	      }.bind(this),
@@ -43657,19 +43661,6 @@
 	            _reactBootstrap.Button,
 	            { className: 'home-button', bsSize: 'large', onClick: this.handleClick },
 	            'Register with Email'
-	          )
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'home-bot' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'tutorial' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'tutorial-title' },
-	            'How to use Vegie 101'
 	          )
 	        )
 	      )

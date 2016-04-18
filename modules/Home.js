@@ -16,7 +16,6 @@ export default React.createClass({
 
   render() {
     return (<div className="home">
-    		 
     		   <div className="home-top">
 	    		   <div className="home-title">We help you find the right food</div>
 	    		   <div className="home-options">
@@ -24,12 +23,6 @@ export default React.createClass({
 					 <Button className="home-button"  bsSize="large" onClick={this.handleClick} >Register with Email</Button>
 	    		   </div>
 	    		</div>
-	    		<div className="home-bot">
-	    			<div className="tutorial">
-	    				<div className="tutorial-title">How to use Vegie 101</div>
-	    			</div>
-	    		</div>
-    		 
     	   </div>
     )
   }

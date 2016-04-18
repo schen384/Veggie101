@@ -27,9 +27,11 @@ export default React.createClass({
       success: function(data) {
         const recipes = data.results
         if (recipes.length != 0) {
-          recipes.forEach(recipe => {
-            recipe.username = this.state.username
-          })
+          if(this.state.username != null) {
+            recipes.forEach(recipe => {
+              recipe.username = this.state.username
+            })
+          }
           this.setState({recipes:recipes})
         } else {
           this.setState({showAlert:true})
@@ -50,9 +52,11 @@ export default React.createClass({
       success: function(data) {
         const recipes = data.results
         if (recipes.length != 0) {
-          recipes.forEach(recipe => {
-            recipe.username = this.state.username
-          })
+          if(this.state.username != null) {
+            recipes.forEach(recipe => {
+              recipe.username = this.state.username
+            })
+          }
           this.setState({recipes:recipes})
         }
       }.bind(this),
