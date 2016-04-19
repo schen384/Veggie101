@@ -5,17 +5,20 @@ import About from './About'
 import ViewMeal from './ViewMeal'
 import Register from './Register'
 import Login from './Login'
-import Repo from './Repo'
 import Home from './Home'
 import Detail from './Detail'
 import Profile from './Profile'
+import User from './User'
 
 module.exports = (
   <Route path="/" component={Root}>
     <IndexRoute component={Home}/>
     <Route path="/view-meal" component={ViewMeal}/>
-    <Route path="/meal/:resource_id" component={Detail}/>
+    <Route path="/view-meal/:username" component={ViewMeal}/>
+    <Route path="/recipe/:recipe_id" component={Detail}/>
+    <Route path="/recipe/:recipe_id/:username" component={Detail}/>
     <Route path="/profile/:username" component={Profile}/>
+    <Route path="/user/:username" component={User}/>
     <Route path="/register" component={Register}/>
     <Route path="/login" component={Login}/>
   </Route>

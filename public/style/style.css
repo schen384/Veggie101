@@ -16,7 +16,7 @@
 	z-index: -1;
 	overflow: auto;
 	padding-top: -10px;
-	min-height: 80vh;
+	min-height: 100vh;
 }
 
 .login {
@@ -101,16 +101,23 @@
 	font-weight:200;
 }
 
+.filter-left-col {
+	/*background-color: #EFEFEF;*/
+	padding: 0;
+}
+
 .filter {
-	background-color:rgba(186, 219, 180, 0.28);
+	/*border-right: 1px solid lightgrey;*/
+	/*background-color:rgba(186, 219, 180, 0.28);*/
 	min-height: 100vh;
 	padding-left: 20px;
 }
 
 .filter-title {
-	font-family: georgia;
-	font-size: 30px;
-	font-weight: 300;
+	text-align: right;
+	font-family: inherit;
+	font-size: 20px;
+	font-weight: 700;
 	padding-top: 50px;
 	margin-bottom: 22px;
 }
@@ -134,10 +141,11 @@ input[type=checkbox], input[type=radio] {
 
 .search-input {
 	float: left;
-	width: 50%;
+	width: 40%;
 	margin-top: 40px;
 	height: 45px;
 	font-size: 20px;
+	margin-left: 15px;
 	/*float: left;*/
 }
 
@@ -146,10 +154,15 @@ input[type=checkbox], input[type=radio] {
 	margin-left: 15px;
 	margin-bottom: 10px;
 	height: 45px;
-	font-size: 20px;
-	font-family: cursive;
+	font-size: 17px;
+	font-family: proxima-nova-bold;
 	font-weight: bold;
-	width: 120px;
+	width: 150px;
+}
+
+.meals {
+	padding: 0;
+	background-color: white;
 }
 
 .meal {
@@ -171,6 +184,21 @@ input[type=checkbox], input[type=radio] {
 	color: darkgreen;
 	font-size: 18px;
 	font-weight: 500;
+}
+
+.meal-tags {
+	color: #8A6D3B;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.meal-tag-col {
+	text-align: center;
+}
+
+.meal-ready {
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 .nutrient-name {
@@ -197,8 +225,8 @@ input[type=checkbox], input[type=radio] {
 }
 
 .detail-pic img{
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 300px;
+	max-height: 300px;
 	display:block;
     margin:auto;
 }
@@ -208,7 +236,7 @@ input[type=checkbox], input[type=radio] {
 	padding-top: 30px;
     margin: 0 auto;
     text-align:center;
-	font-size:20px;
+	font-size:15px;
 	font-weight:bold;
 	max-width:750px;
 	color: darkgreen;
@@ -224,7 +252,7 @@ input[type=checkbox], input[type=radio] {
     margin: 0 auto;
     margin-bottom: 40px;
     text-align:center;
-	font-size:35px;
+	font-size:25px;
 	font-weight:bold;
 	max-width:750px;
 	color: darkgreen;
@@ -234,6 +262,7 @@ input[type=checkbox], input[type=radio] {
 .detail-label {
 	font-size: 18px;
 	font-weight: bold;	
+	text-align: right;
 }
 
 .detail-text {
@@ -251,6 +280,8 @@ input[type=checkbox], input[type=radio] {
 }
 .detail-button {
 	margin-top: 20px;
+	margin-bottom: 50px;
+	width: 100%;
 }
 
 #detail-pic-button {
@@ -260,6 +291,11 @@ input[type=checkbox], input[type=radio] {
 	margin: 0 auto;
 	margin-top: 30px;
 
+}
+
+.detail-tags {
+	color: #8A6D3B;
+    font-weight: bold;
 }
 
 .title {
@@ -328,17 +364,96 @@ input[type=checkbox], input[type=radio] {
 	margin-top: 5px;
 }
 
+.user-col {
+	padding: 0;
+}
 
+.user-page {
+	margin-top: 60px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
 
+.user-name {
+	margin-top: -30px;
+	/*margin-bottom: 25px;*/
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
 
+.user-right-btn {
+	/*margin-top: 30px;*/
+	display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 80%;
+}
 
+.page-root .container {
+	width: 100%
+}
 
+.user-datepicker {
+	padding-left: 10px;
+    margin-left: 8%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: rgba(0, 129, 0, 0.28);
+    /*border-radius: 5px;*/
+}
 
+.page-root {
+	min-width: 1344px;
+}
 
+svg {
+	display: block;
+	margin: 0 auto;
+}
 
+.react-datepicker__tether-element {
+	margin-left: 350px;
+}
 
+.view-meal-page .row{
+	margin-left: 0;
+	margin-right: 0;
+}
 
+.filter-name-col {
+	text-align: right;
+}
 
+.filter-name {
+	font-weight: 700;
+}
+
+.filter-input-type {
+	display: block;
+    text-transform: uppercase;
+    color: #808b92;
+}
+
+.filter-instruction {
+	font-size: 12px;
+	margin-bottom: 10px;
+	/*margin-left: 2px;*/
+}
+
+.alert {
+    position: absolute;
+    top: 200px;
+    z-index: 1000;
+    left: 40%;
+}
+
+.view-meal-page {
+	background-color: #F5F5F5;
+}
 
 
 

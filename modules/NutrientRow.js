@@ -8,8 +8,8 @@ export default React.createClass({
 		// console.log(this.props.nutrient)
 		const row = (
 				<tr>
-			  	<td>{this.props.nutrient.name}</td>
-			  	<td>{this.props.nutrient.value == null ? "-" : this.props.nutrient.value + ' ' + this.props.nutrient.unit}</td>
+			  	<td>{this.props.nutrient.title}</td>
+			  	<td>{this.props.nutrient.amount == null ? "-" : this.props.nutrient.amount + ' ' + this.props.nutrient.unit}</td>
 			  </tr>
 			)
 
